@@ -1,11 +1,14 @@
 os:
 - linux
 dist: trusty
+sudo: required
 language: node_js
 node_js: 8
+before_install:
+- sudo apt-get install -y wine
 before_script:
   - npm run build
-env:
-  global:
-  - WINEDLLOVERRIDES="mscoree,mshtml="
-  - WINEDEBUG="-all"
+#env:
+#  global:
+#  - WINEDLLOVERRIDES="mscoree,mshtml="
+#  - WINEDEBUG="-all"
