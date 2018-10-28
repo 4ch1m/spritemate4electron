@@ -1,0 +1,29 @@
+{
+  "name": "spritemate4electron",
+  "productName": "spritemate4electron",
+  "version": "1.0.0",
+  "description": "A simple \"Electron-wrapper\" for Esshahn's awesome Spritemate-webapp.",
+  "license": "MIT",
+  "author": "Achim Seufert",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . --out=dist --asar --overwrite --all"
+  },
+  "main": "main.js",
+  "files": [
+    "main.js",
+    "spritemate/dist/**/*"
+  ],
+  "repository": "4ch1m/spritemate4electron",
+  "keywords": [
+    "spritemate",
+    "electron"
+  ],
+  "dependencies": {
+    "electron-window-state": "^5.0.2"
+  },
+  "devDependencies": {
+    "electron": "^3.0.6",
+    "electron-packager": "^12.2.0"
+  }
+}
