@@ -8,7 +8,3 @@ before_install:
 - sudo apt-get install -y wine
 before_script:
   - npm run build
-#env:
-#  global:
-#  - WINEDLLOVERRIDES="mscoree,mshtml="
-#  - WINEDEBUG="-all"
