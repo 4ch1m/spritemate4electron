@@ -8,7 +8,7 @@
   "scripts": {
     "start": "electron .",
     "test": "echo 'tests disabled'",
-    "build": "electron-packager . --out=dist --asar --overwrite --all"
+    "build": "electron-packager . --all --overwrite --out=dist"
   },
   "main": "main.js",
   "files": [
