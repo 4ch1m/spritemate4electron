@@ -1,4 +1,4 @@
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, nativeImage} = require('electron');
 const windowStateKeeper = require('electron-window-state');
 
 let mainWindow;
@@ -10,7 +10,7 @@ function createWindow() {
     });
 
     mainWindow = new BrowserWindow({
-        icon: __dirname + '/spritemate/dist/img/favicon/android-chrome-256x256.png',
+        icon: nativeImage.createFromPath(__dirname + '/spritemate/dist/img/favicon/android-chrome-256x256.png'),
         x: mainWindowState.x,
         y: mainWindowState.y,
         width: mainWindowState.width,
