@@ -22,10 +22,10 @@
     "electron"
   ],
   "dependencies": {
-    "electron-window-state": "^5.0.3"
+    "electron-store": "^6.0.0"
   },
   "devDependencies": {
-    "electron": "^9.1.0",
-    "electron-packager": "^15.0.0"
+    "electron": "^10.1.0",
+    "electron-packager": "^15.1.0"
   }
 }
