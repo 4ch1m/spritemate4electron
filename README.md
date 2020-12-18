@@ -28,7 +28,7 @@ Find executables for ...
  
 ... in the __[RELEASES](https://github.com/4ch1m/spritemate4electron/releases)__-section.
 
-## Build it yourself
+## Build / Run it yourself
 
 ##### Clone
 ```
@@ -46,11 +46,17 @@ git submodule update
 npm install
 ```
 
-##### Build
+##### Start
 ```
-npm run build
+npm run start
 ```
-... and then check the `dist`-folder for binaries.
+
+##### Package
+```
+npm run package
+```
+
+(Check the `dist`-folder for distributable binaries.)
 
 ## Author
 

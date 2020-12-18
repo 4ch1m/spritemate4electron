@@ -1,3 +1,2 @@
 language: node_js
-node_js: 13
-before_script: npm run build-with-travis
+node_js: node
