@@ -9,7 +9,8 @@
     "preinstall": "cd spritemate; npm install; npm run build",
     "start": "electron .",
     "test": "echo 'tests disabled'",
-    "package": "electron-packager . --platform=all --out=dist --overwrite --asar"
+    "package": "electron-packager . --platform=all --out=dist --overwrite --asar",
+    "package-4-travis": "electron-packager . --platform=linux --asar"
   },
   "main": "main.js",
   "files": [
