@@ -1,7 +1,7 @@
 {
   "name": "spritemate4electron",
   "productName": "spritemate4electron",
-  "version": "1.21.0",
+  "version": "1.22.0",
   "description": "A simple \"Electron-wrapper\" for Esshahn's awesome Spritemate-webapp.",
   "license": "MIT",
   "author": "Achim Seufert",
@@ -23,8 +23,8 @@
     "electron"
   ],
   "dependencies": {
-    "electron": "^11.2.3",
-    "electron-store": "^7.0.1"
+    "electron": "^12.0.2",
+    "electron-store": "^7.0.2"
   },
   "devDependencies": {
     "electron-packager": "^15.2.0"
