@@ -1,6 +1,6 @@
 # spritemate4electron
 
-A simple "[Electron](https://electronjs.org)-wrapper" for [Esshahn](https://github.com/Esshahn)'s awesome
+> A simple "[Electron](https://electronjs.org)-wrapper" for [Esshahn](https://github.com/Esshahn)'s awesome
 __[Spritemate](https://github.com/Esshahn/spritemate)__-webapp.
 
 ## But... why?
@@ -10,12 +10,6 @@ Other benefits are:
 * automatically restores your previously used window position/size (which is especially useful when working with a multi-monitor setup)
 * no trouble with ad-blockers, etc.
 * runs independent from your default browser (dedicated "localStorage", "sessionStorage", etc.)
-
-## Vital Stats
-
-* [![Build Status](https://travis-ci.org/4ch1m/spritemate4electron.svg?branch=master)](https://travis-ci.org/4ch1m/spritemate4electron)
-
-* ![Dependencies](https://david-dm.org/4ch1m/spritemate4electron.svg)
 
 ## Download pre-built binaries
 
