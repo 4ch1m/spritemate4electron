@@ -31,8 +31,7 @@ git clone https://github.com/4ch1m/spritemate4electron.git
 
 ##### Init
 ```
-git submodule init
-git submodule update
+git submodule update --init
 ```
 
 ##### Install
