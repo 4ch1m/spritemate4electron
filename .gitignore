@@ -1,5 +1,7 @@
+.idea/
 *.iml
-.idea
-dist
-node_modules
-spritemate
+
+node_modules/
+dist/
+
+spritemate/

@@ -59,4 +59,4 @@ Electron-Wrapper: [4ch1m](https://github.com/4ch1m)
 
 ## License
 
-Please read the [license](license) file.
+Please read the [license](LICENSE) file.

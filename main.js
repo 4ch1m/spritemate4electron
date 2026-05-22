@@ -1,5 +1,12 @@
-const {app, BrowserWindow, nativeImage} = require('electron');
-const store = new (require('electron-store'))();
+import { app, BrowserWindow, nativeImage } from 'electron';
+
+import Store from 'electron-store';
+const store = new Store();
+
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 let mainWindow;
 
@@ -24,6 +31,7 @@ function windowStateKeeper(windowName) {
         if (!windowState.isMaximized) {
             windowState = window.getBounds();
         }
+
         windowState.isMaximized = window.isMaximized();
 
         store.set(`windowState.${windowName}`, windowState);
@@ -33,7 +41,9 @@ function windowStateKeeper(windowName) {
         window = win;
 
         ['resize', 'move', 'close'].forEach(event => {
-            win.on(event, saveState);
+            win.on(event, () => {
+                saveState();
+            });
         });
     }
 
@@ -53,7 +63,7 @@ function createWindow() {
     const mainWindowStateKeeper = windowStateKeeper('main');
 
     mainWindow = new BrowserWindow({
-        icon: nativeImage.createFromPath(__dirname + '/spritemate/dist/img/favicon/android-chrome-256x256.png'),
+        icon: nativeImage.createFromPath(`${__dirname}/spritemate/dist/favicon/android-chrome-256x256.png`),
         x: mainWindowStateKeeper.x,
         y: mainWindowStateKeeper.y,
         width: mainWindowStateKeeper.width,
@@ -61,23 +71,26 @@ function createWindow() {
     });
     mainWindow.loadFile('spritemate/dist/index.html');
     mainWindow.setMenu(null);
-    mainWindow.on('closed', function () {
+    mainWindow.on('closed', () => {
         mainWindow = null
     });
+    // mainWindow.webContents.openDevTools()
 
     mainWindowStateKeeper.track(mainWindow);
 }
 
-app.on('ready', createWindow);
+app.whenReady().then(() => {
+    createWindow();
 
-app.on('window-all-closed', function () {
+    app.on('activate', () => {
+        if (BrowserWindow.getAllWindows().length === 0) {
+            createWindow();
+        }
+    })
+})
+
+app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
-        app.quit()
+        app.quit();
     }
-});
-
-app.on('activate', function () {
-    if (mainWindow === null) {
-        createWindow()
-    }
-});
+})
